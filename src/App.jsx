@@ -38,11 +38,11 @@ function App() {
     setResult(judgement(choice[myChoice], computerChoice))
   }
   const judgement = (uu, cc) => {
-    if (uu.name == cc.name) {
+    if (uu.name === cc.name) {
       return 'TIE'
-    } else if (uu.name == 'Rock') { return cc.name == 'Scissors' ? 'WIN' : 'LOSE' }
-    else if (uu.name == 'Scissors') { return cc.name == 'Paper' ? 'WIN' : 'LOSE' }
-    else if (uu.name == 'Paper') { return cc.name == 'Rock' ? 'WIN' : 'LOSE' }
+    } else if (uu.name === 'Rock') { return cc.name === 'Scissors' ? 'WIN' : 'LOSE' }
+    else if (uu.name === 'Scissors') { return cc.name === 'Paper' ? 'WIN' : 'LOSE' }
+    else if (uu.name === 'Paper') { return cc.name === 'Rock' ? 'WIN' : 'LOSE' }
 
     console.log(uu, cc)
     /*

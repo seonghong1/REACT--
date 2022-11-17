@@ -5,9 +5,9 @@ const Box = (props) => {
     // props.result의 값을 result변수 안에 넣어서 한번 걸러줌
     let result;
     //타이틀의 이름이 컴퓨터고, 승패 결과가 비겼을때가 아닐때고, 승패 결과가 공백이 아닐경우
-    if (props.title == 'Computer' && props.result != 'TIE' && props.result != ""){
+    if (props.title === 'Computer' && props.result !== 'TIE' && props.result !== ""){
         //나의 result값이 이김이면 let result의 값은 졌어요, 내가 졌으면 let result의 값은 이김 !!
-        result = props.result == 'WIN' ? 'LOSE':'WIN'
+        result = props.result === 'WIN' ? 'LOSE':'WIN'
     }else{
         result = props.result;
     }
