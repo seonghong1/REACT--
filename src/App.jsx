@@ -2,21 +2,8 @@ import './App.css';
 import React, { useState } from 'react';
 import Box from './components/Box';
 
-
-/*
-1. 가위바위보가 나올 박스 2개가 (타이틀, 이미지, 결과)
-2. 가위바위보 버튼
-3. 버튼 클릭시 -> 
-    4. 클릭한 아이템이 user box에 이미지가 표시됨 -> 
-    5. 랜덤한 아이템이 com box에 표시됨 ->
-    6. 4,5번의 승패를 나눔 ->
-    7. 결과에 따라서 박스의 테두리 색상이 바뀜, 승-파랑/패-회색
-*/
-
 function App() {
-  //버튼 클릭시 my의 상태
   const [mySelect, setMySelect] = useState(null);
-  //버튼 클릭시 computer의 상태
   const [computerSelect, setcomputerSelect] = useState(null);
   //승패 결과값
   const [result, setResult] = useState('');
@@ -43,17 +30,7 @@ function App() {
     } else if (uu.name === 'Rock') { return cc.name === 'Scissors' ? 'WIN' : 'LOSE' }
     else if (uu.name === 'Scissors') { return cc.name === 'Paper' ? 'WIN' : 'LOSE' }
     else if (uu.name === 'Paper') { return cc.name === 'Rock' ? 'WIN' : 'LOSE' }
-
     console.log(uu, cc)
-    /*
-        유저 == 컴퓨터  --> tir(비겼음)
-        유저 rock == 컴퓨터 scissors -->유저 win
-        유저 rock == 컴퓨터 papaer -->유저 lose
-        유저 scissors == 컴퓨터 rock -->유저 lose
-        유저 scissors == 컴퓨터 papaer -->유저 win
-        유저 papaer == 컴퓨터 rock -->유저 win
-        유저 papaer == 컴퓨터 scissors -->유저 lose
-    */
   }
 
   //컴퓨터가 선택한 랜덤값
@@ -72,9 +49,10 @@ function App() {
 
   return (
     <>
+    <div className="title">😀Rock Paper Scissors🤣</div>
       <div className='main'>
         <Box title='My' item={mySelect} result={result} />
-        <Box title='Computer' item={computerSelect} result={result}/>
+        <Box title='Computer' item={computerSelect} result={result} />
       </div>
       <div className="main">
         {/*
